@@ -1,0 +1,128 @@
+### Hello jOOQ API Test
+### IntelliJ IDEA HTTP Client
+
+@baseUrl = http://localhost:8080
+
+###################################################################
+## Users API
+###################################################################
+
+### 전체 사용자 조회
+GET {{baseUrl}}/api/users
+
+### ID로 사용자 조회
+GET {{baseUrl}}/api/users/1
+
+### 활성 사용자 조회
+GET {{baseUrl}}/api/users/active
+
+### 사용자 수 조회
+GET {{baseUrl}}/api/users/count
+
+### 사용자 생성
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com"
+}
+
+### 사용자 수정
+PUT {{baseUrl}}/api/users/1
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "email": "updated@example.com",
+  "status": "ACTIVE"
+}
+
+### 사용자 삭제
+DELETE {{baseUrl}}/api/users/5
+
+###################################################################
+## Products API
+###################################################################
+
+### 전체 상품 조회
+GET {{baseUrl}}/api/products
+
+### ID로 상품 조회
+GET {{baseUrl}}/api/products/1
+
+### 상품 검색
+GET {{baseUrl}}/api/products/search?keyword=MacBook
+
+### 가격대별 조회
+GET {{baseUrl}}/api/products/price-range?minPrice=100000&maxPrice=500000
+
+### 카테고리별 상품 조회
+GET {{baseUrl}}/api/products/category/1
+
+### 전체 카테고리 조회
+GET {{baseUrl}}/api/products/categories
+
+### 카테고리별 상품 수
+GET {{baseUrl}}/api/products/categories/product-counts
+
+### 상품 생성
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+  "name": "New Product",
+  "description": "Product description",
+  "price": 99000,
+  "stockQuantity": 100,
+  "categoryId": 1
+}
+
+### 재고 수정
+PATCH {{baseUrl}}/api/products/1/stock?quantity=50
+
+### 상품 삭제
+DELETE {{baseUrl}}/api/products/10
+
+###################################################################
+## Orders API
+###################################################################
+
+### ID로 주문 조회
+GET {{baseUrl}}/api/orders/1
+
+### 사용자별 주문 조회
+GET {{baseUrl}}/api/orders/user/1
+
+### 상태별 주문 조회 (PENDING, CONFIRMED, COMPLETED, CANCELLED)
+GET {{baseUrl}}/api/orders/status/PENDING
+
+### 주문 + 사용자 정보 조회 (JOIN)
+GET {{baseUrl}}/api/orders/with-users
+
+### 주문 상품 상세 조회 (JOIN)
+GET {{baseUrl}}/api/orders/1/items/details
+
+### 사용자별 주문 통계
+GET {{baseUrl}}/api/orders/summary/by-user
+
+### 주문 생성
+POST {{baseUrl}}/api/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "items": [
+    {"productId": 1, "quantity": 1},
+    {"productId": 3, "quantity": 2}
+  ]
+}
+
+### 주문 확정
+PATCH {{baseUrl}}/api/orders/1/confirm
+
+### 주문 완료
+PATCH {{baseUrl}}/api/orders/1/complete
+
+### 주문 취소
+PATCH {{baseUrl}}/api/orders/2/cancel

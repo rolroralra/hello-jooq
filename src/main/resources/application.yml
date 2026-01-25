@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hello-jooq
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hellojooq
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  jooq:
+    sql-dialect: POSTGRES
+
+  docker:
+    compose:
+      lifecycle-management: start_and_stop
+      start:
+        command: up
+      stop:
+        command: down
+        timeout: 1m
+
+logging:
+  level:
+    org.jooq.tools.LoggerListener: DEBUG
+    com.example.hellojooq: DEBUG
