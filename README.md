@@ -245,6 +245,9 @@ jOOQ에 대한 자세한 내용은 아래 교육 문서를 참고하세요:
 - [Chapter 5: JOIN과 서브쿼리](./docs/05-joins-and-subqueries.md)
 - [Chapter 6: Spring Boot 통합](./docs/06-spring-boot-integration.md)
 - [Chapter 7: 팁과 모범 사례](./docs/07-tips-and-best-practices.md)
+- [부록: jOOQ 핵심 클래스 개념 정리](./docs/appendix-core-classes.md) _(선택)_
+- [부록: Window Functions (윈도우 함수)](./docs/appendix-window-functions.md) _(선택)_
+- [부록: Plain SQL 템플릿](./docs/appendix-plain-sql.md) _(선택)_
 
 ## 참고 자료
 
