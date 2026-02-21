@@ -248,6 +248,7 @@ jOOQ에 대한 자세한 내용은 아래 교육 문서를 참고하세요:
 - [부록: jOOQ 핵심 클래스 개념 정리](./docs/appendix-core-classes.md) _(선택)_
 - [부록: Window Functions (윈도우 함수)](./docs/appendix-window-functions.md) _(선택)_
 - [부록: Plain SQL 템플릿](./docs/appendix-plain-sql.md) _(선택)_
+- [부록: ExecuteListener - 쿼리 실행 생명주기 훅](./docs/appendix-execute-listener.md) _(선택)_
 
 ## 참고 자료
 
